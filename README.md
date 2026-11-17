@@ -1,13 +1,14 @@
-# Coda：Code-Driven Video Generation Artist
+<h1 align="center">Coda：Code-Driven Video Generation Artist</h1>
 
 <p align="center">
   <img src="assets/banner.png" width="100%">
 </p>
 
-CODA is a series of works that bridges videos and code for visual generation. The series covers two directions:
+Coda is a research series exploring the **full Code2Video pipeline**: translating visual content and generation intent into executable representations, constructing and rendering proxy videos, enhancing prompts, synthesizing videos, and developing evaluation and feedback mechanisms to improve generation.
 
-- **Video → Code:** model 2D videos as HTML animations and 3D videos as Three.js scenes, so that a video is captured by executable code.
-- **Code → Video:** use executable code to guide video generation, with HTML for 2D animation and Blender / Three.js 3D proxies for scene layout, motion, and physical interactions.
+The series spans diverse video types, tasks, and executable representations. **HTML, Three.js, and Blender** are examples of tools used across individual works, with representations and rendering engines chosen to suit each task. CodeCap-Bench's HTML-based captioning of structured 2D videos is one specific task within this broader agenda.
+
+Our research connects **video-to-code modeling**, **proxy construction and simulation**, and **code-guided video synthesis**. Planned directions also include **Prompt Enhancement (PE)** and **reward models for proxy videos**, extending the series across the stages that determine the quality and controllability of Code2Video generation.
 
 ## 🧭 Works in the Series
 
@@ -15,9 +16,9 @@ Click a work's name to jump to its section below.
 
 | Work | Overview | Status |
 |---|---|---|
-| [**Coda-DaVinci**](#coda-davinci) | **Code → Video.** A task-adaptive framework that combines 3D proxies, physics simulation, and video generation to control scene structure and motion. | Coming soon |
-| [**CodeCap-Bench**](#codecap-bench) | **Video → Code.** A benchmark for generating executable HTML/CSS/JavaScript captions of 2D videos, evaluating visual fidelity, spatio-temporal alignment, and information retention. | Released · 2026/10 |
-| [**Video → Three.js**](#video-to-threejs) | **Video → Code.** An upcoming work on modeling 3D videos as executable Three.js scenes. | Coming soon |
+| [**Coda-DaVinci**](#coda-davinci) | **Proxy-guided video generation.** A task-adaptive framework that combines 3D proxies, physics simulation, and video generation to control scene structure and motion. | Coming soon |
+| [**CodeCap-Bench**](#codecap-bench) | **Code captioning and evaluation.** A benchmark for generating executable HTML/CSS/JavaScript captions of 2D videos, evaluating visual fidelity, spatio-temporal alignment, and information retention. | Released · 2026/10 |
+| [**Video → 3D Code**](#video-to-3d-code) | **Video-to-code modeling.** An upcoming direction on representing video content as executable 3D scenes, using tools such as Three.js and Blender. | Coming soon |
 
 ## 📜 News
 
@@ -31,22 +32,24 @@ Click a work's name to jump to its section below.
 | Work                         | Paper                                    | Project Page                                               | Dataset                                                                        | Code                                    |
 | ---------------------------- | ---------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------ | --------------------------------------- |
 | CodeCap-Bench                | [arXiv](https://arxiv.org/abs/2610.37341) | [codecap-bench.github.io](https://codecap-bench.github.io/) | [🤗 CodeCap-Dataset](https://huggingface.co/datasets/kevintank/CodeCap-Dataset) | [CodeCap-Bench](CodeCap-Bench/README.md) |
-| Video → Three.js            | Coming soon                              | Coming soon                                                | Coming soon                                                                    | Coming soon                             |
+| [Video → 3D Code](#video-to-3d-code) | Coming soon                              | Coming soon                                                | Coming soon                                                                    | Coming soon                             |
 | [Coda-DaVinci](#coda-davinci) | Coming soon | Coming soon | — | Coming soon |
 
 ## 💡 Motivation
 
-Video captions and video generation prompts mostly use natural language. Fine-grained spatial structure and temporal dynamics, such as complex layouts, motion trajectories, camera movement, and coordinated state changes, are hard to state precisely in text and lead to long, ambiguous descriptions. Executable code describes the same content through graphical primitives, layout rules, and functions of time:
+Video generation requires coordinating intent, scene structure, motion, physical interactions, and visual appearance. Executable representations provide a way to specify, simulate, inspect, and revise spatial and temporal behavior. Rendered proxy videos can communicate that behavior to a video generator, while prompts and reference media guide appearance and finer details.
 
-- **Rule-based spatial structure:** layout rules, scene graphs, and shared drawing functions describe elements and their spatial relationships compactly.
-- **Computable temporal evolution:** time functions specify intervals, displacement, and easing, so the visual state can be computed at any moment.
-- **Executable visual specification:** rendering the code yields a video, so a code caption can be checked against the reference video and used as a precise control signal for generation.
+Each stage affects the final result: how the scene is represented, what the proxy captures, how prompts align with it, how the video model uses the guidance, and how errors are evaluated and corrected. Coda studies these stages together to improve control, fidelity, and consistency across video-generation tasks.
 
-The CODA series studies three questions:
+The series is organized around the following research questions:
 
-- **Code as a Visual Caption:** Can code serve as a good caption of 2D and 3D videos?
-- **Video ↔ Code Modeling:** Can models faithfully translate videos into HTML or Three.js code, and render code back into videos?
-- **Code-Driven Video Generation:** Can executable representations, from HTML 2D animations to Blender / Three.js 3D proxies, guide video generation models to produce videos with accurate layout, motion, and timing?
+- **Video-to-Code Modeling:** How can visual content and dynamics be captured in executable representations across video types, tasks, and modeling tools?
+- **Proxy Construction and Simulation:** What scene structure, motion, and physical behavior should a proxy encode, and how should its level of detail adapt to the task?
+- **Prompt Enhancement (PE):** How can prompts express generation intent and coordinate proxy videos, subject references, appearance, and fine-grained actions?
+- **Video Synthesis and Control:** How can video models use code-derived guidance to produce faithful, natural, and consistent videos, including longer sequences and successive interactions?
+- **Evaluation, Reward Modeling, and Feedback:** How can we assess code representations, proxy videos, and generated outputs? How can reward models for proxy videos provide useful signals for selection and refinement?
+
+Current works address specific parts of this pipeline; further work on PE, proxy-video reward modeling, and other components will expand this research agenda.
 
 <a id="coda-davinci"></a>
 
@@ -54,7 +57,7 @@ The CODA series studies three questions:
 
 **Coda-DaVinci: Reimagining Video Generation with Code2Video** · **Coming soon**
 
-Coda-DaVinci advances the **Code → Video** direction of the CODA series. It combines executable 3D scenes with video generation models to improve control over scene structure, motion, and physical interactions. Rather than constructing a detailed 3D proxy for every task, it selects between **proxy-guided generation** and **direct video generation** according to the task: explicit modeling provides structural control where needed, while the video model supplies appearance and fine motion.
+Coda-DaVinci studies **task-adaptive proxy construction and video synthesis** within the Coda series. It combines executable 3D scenes with video generation models to improve control over scene structure, motion, and physical interactions. Rather than constructing a detailed 3D proxy for every task, it selects between **proxy-guided generation** and **direct video generation** according to the task: explicit modeling provides structural control where needed, while the video model supplies appearance and fine motion.
 
 <p align="center">
   <img src="assets/coda-davinci-overview.png" width="100%" alt="Coda-DaVinci framework: task routing, adaptive 3D proxy construction, proxy-grounded video synthesis, and independent review and repair in a shared workspace.">
@@ -109,7 +112,7 @@ Long-video evaluations on **29 LongAV-Compass cases** and **50 WBench cases** sh
   <img src="https://codecap-bench.github.io/assets/figures/introduction.webp">
 </p>
 
-CodeCap-Bench is the first work of the CODA series. It asks whether code can serve as a good video caption, and whether current multimodal large language models (MLLMs) can generate faithful code captions. Under the evaluated settings, code captions retain more information than natural language captions: videos rendered from code support more accurate question answering and reconstruct the reference videos more faithfully.
+CodeCap-Bench is the first work of the Coda series. It asks whether code can serve as a good video caption, and whether current multimodal large language models (MLLMs) can generate faithful code captions. Under the evaluated settings, code captions retain more information than natural language captions: videos rendered from code support more accurate question answering and reconstruct the reference videos more faithfully.
 
 CodeCap-Bench evaluates the code captioning capabilities of MLLMs on structured 2D videos. Given a reference video, a model writes a code caption in HTML, CSS, and JavaScript. All visual content must be generated programmatically, without reference frames or external visual assets. The code is rendered into a video and compared with the reference along three complementary dimensions.
 
@@ -212,16 +215,17 @@ bash scripts/evaluate.sh --video-id 246 --generated /path/to/generated.mp4 --out
 </details>
 
 <a id="video-to-threejs"></a>
+<a id="video-to-3d-code"></a>
 
-## 🧊 Video → Three.js
+## 🧊 Video → 3D Code
 
 **Coming soon**
 
-This upcoming work extends the **Video → Code** direction to 3D videos by modeling them as executable Three.js scenes. Further details will be added upon release.
+This upcoming direction studies how video content can be represented as executable 3D scenes, with scene structure and dynamics modeled using tools such as **Three.js and Blender**. It contributes to the video-to-code and proxy-construction stages of the broader Code2Video pipeline. Further details will be added upon release.
 
 ## ✒️ Citation
 
-If **CODA series** is helpful for your research, please consider **star** ⭐ and **citation** 📝 :
+If **Coda series** is helpful for your research, please consider **star** ⭐ and **citation** 📝 :
 
 ```bibtex
 @article{Tang2026CodeCapBench,
@@ -234,4 +238,8 @@ If **CODA series** is helpful for your research, please consider **star** ⭐ an
 
 ## 📄 License
 
-License information will be added soon.
+Coda is an open-source academic research series. Unless otherwise noted, the original source code and accompanying documentation in this repository are licensed under the **[Apache License 2.0](LICENSE)**. Academic and commercial use, modification, and redistribution are permitted subject to the license terms.
+
+Datasets, model weights, third-party dependencies, and reference media are subject to their respective licenses and release terms. Please consult the relevant project documentation or release page for asset-specific licensing information.
+
+If you use Coda in your research, we encourage you to cite the relevant papers listed in this README. This citation request is an academic courtesy, not an additional license condition.
