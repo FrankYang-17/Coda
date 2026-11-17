@@ -1,0 +1,38 @@
+### Image input format
+The images show the complete generated video, followed by the reference clip, sampled at 2 fps. Read them in order, and read each grid from left to right, top to bottom. Black cells without timestamps are padding.
+Generated-video timestamps start at 0. Reference timestamps start at the beginning of the clip; add reference_start_s exactly once to compare them on the original timelines. Use each video's supplied logical duration as its endpoint.
+Base judgments on details and changes visible in the sampled images; unreadable content and events between frames remain unverified.
+
+
+Compare the generated video with the reference clip and rate how faithfully it reproduces the current focus on a scale from 0 to 5.
+
+Look through the complete generated video to find the corresponding content. When similar content appears more than once, use the surrounding states to identify the matching sequence.
+For static points, compare content, appearance, position, proportions, layout, spatial relationships, and information hierarchy. Check how long a state lasts when the focus requires it to persist.
+For dynamic points, compare starting states, intermediate changes, order, pacing, duration, coordination, and results. When the focus requires other areas to stay stable, compare their behavior too.
+Base the comparison on clearly visible frames and the details and relationships covered by the focus. The importance of a difference depends on what it changes, rather than how much screen space it occupies.
+
+### Scores
+5: The content, appearance, structure, key relationships, and progression covered by the focus are accurate and complete. Timing correspondence is correct, and no difference is discernible in the visible frames.
+4: The main content, key relationships, and complete progression are accurate. The overall match is very close, with only isolated, very slight differences in position, proportion, or local timing.
+3: Core content, structure, and key relationships are complete and correct. For dynamics, the required key states, steps, feedback, coordination, and results are reproduced, with essentially correct main order and pacing. Non-core details have clear local deviations, while the overall presentation remains close to the reference.
+2: There are clear omissions, errors, or widespread deviations overall, but at least one substantive part directly relevant to the focus is complete and accurate. A static part includes specific content and correct structural relationships; a dynamic part includes the corresponding starting state, coherent changes, and correct result.
+1: Some relevant content or motion is reproduced, with rough or scattered correspondence. It does not yet form a complete, accurate, substantive local structure, relationship, or action process.
+0: The focus is not substantively reproduced. For a purely dynamic point, a static end state without the corresponding action scores 0. When the focus includes other requirements, score the parts actually reproduced.
+
+Timing and duration also affect the score. Appearing earlier or later as a whole, ending too early, or lasting too long all count as differences. An offset that preserves the main pacing and event relationships is minor; a clear change to a stage's timeline placement, the main pacing, or synchronization limits the score to 2.
+Choose the highest score that matches the degree of reproduction achieved.
+
+### Output
+Output only {"score": N}, where N is an integer from 0 to 5.
+
+### Input
+{
+  "reference_start_s": {{reference_start_s}},
+  "reference_end_s": {{reference_end_s}},
+  "reference_clip_logical_duration_s": {{reference_clip_logical_duration_s}},
+  "reference_full_duration_s": {{reference_full_duration_s}},
+  "generated_full_logical_duration_s": {{generated_full_logical_duration_s}},
+  "sampling_fps": {{sampling_fps}},
+  "category": {{category}},
+  "focus": {{focus}}
+}

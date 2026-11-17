@@ -1,0 +1,28 @@
+Reference video: {{video_path}}
+
+Recreate the entire reference video, from the first frame to the last. The recreation must have the same total duration as the reference video.
+The recreation starts at 0 seconds, and its timeline must align with the reference video's timeline. seek(seconds) takes a time on this shared timeline, from 0 through the video's total duration.
+Use matching timestamps when extracting reference frames and inspecting the generated page.
+
+Task
+Recreate the visuals and all changes over time in the entire reference video using only HTML, CSS, and JavaScript. Preserve the original aspect ratio, main content, composition, and timing.
+
+Visual implementation constraints
+All visual content must be generated using DOM/CSS, Canvas drawing commands, inline SVG, or procedural WebGL. This includes backgrounds, text, icons, illustrations, software interfaces, and controls.
+The reference video and extracted frames are for observation only and must not be used in the final rendering. Do not use video, full-frame or cropped screenshots, external images, AI-generated images, glyph atlases, extracted textures, or external fonts. Do not circumvent these restrictions by embedding reference imagery as Base64 data, pixel arrays, per-pixel drawing primitives, automatically traced shapes, or similar representations.
+Render text from actual strings using the browser's text layout engine or Canvas fillText/strokeText. You may use fonts already installed on the system.
+Rebuild interfaces, controls, illustrations, and textures in code, preserving their main content, composition, and colors. Do not simply omit them or replace them with unrelated placeholders.
+Preserve the motion and transition timing of the reference video. Do not replace continuous motion with cuts between a few static images.
+
+Workflow and environment
+The working directory is /workspace. First extract reference frames yourself and inspect them with view_image, then write the code. Next, compare browser screenshots against the reference frames and iteratively refine the implementation, covering the main scenes and transitions. Do not infer the visuals from filenames alone.
+The environment comes with ffprobe, ffmpeg, Python, Node, and Chromium preinstalled. Playwright is available at /opt/runtime/browser/node_modules/playwright. Run Python scripts with the python command. Direct internet access is unavailable. Do not download or install additional dependencies.
+Store reference frames for inspection, comparison screenshots, and validation scripts in /workspace/checks/. Store temporary files in /tmp.
+Example screenshot command (at the start of both the recreation and the reference video): node /opt/tools/capture.mjs /workspace/index.html 0 /workspace/checks/frame.png
+To inspect other times, replace 0 in the command with a specific timestamp in seconds, from 0 through the video's total duration. The command accepts a numeric value, not an arithmetic expression.
+
+Delivery requirements
+Save the entire implementation in /workspace/index.html, with no dependencies on other files or network resources.
+Expose window.videoCompare = { duration, width, height, seek(seconds) { /* Pause playback and render the requested time. */ } }, where duration is the reference video's actual total duration in seconds, and width and height match its dimensions in pixels. seek(seconds) must pause the playback clock and reliably render the requested time, including when calls arrive out of chronological order or repeatedly target the same time.
+The deliverable must run in an isolated environment containing only index.html, without reading checks/ or the reference video.
+In your final response, state the entry point, how to open it, what validation you performed, and any remaining differences caused by approximations in the code-only recreation.

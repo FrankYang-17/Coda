@@ -1,0 +1,11 @@
+.env
+.work/
+.venv*/
+outputs/
+models/
+third_party/
+__pycache__/
+*.pyc
+.test-*/
+/tests/
+/agent/docker/smoke_test.sh
