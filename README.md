@@ -22,14 +22,6 @@ Works in the series:
 [2026/11] 🔥 The [dataset](https://huggingface.co/datasets/kevintank/CodeCap-Dataset) and [inference and evaluation code](CodeCap-Bench/README.md) of **CodeCap-Bench** are released !
 [2026/10] 🔥 The [paper](https://arxiv.org/abs/2610.37341) and [project page](https://codecap-bench.github.io/) of **CodeCap-Bench** are released !
 
-## 📋 Todo List
-
-- [X] [Paper (CodeCap-Bench)](https://arxiv.org/abs/2610.37341)
-- [X] [Dataset (CodeCap-Bench)](https://huggingface.co/datasets/kevintank/CodeCap-Dataset)
-- [X] [Inference and evaluation guide (CodeCap-Bench)](CodeCap-Bench/README.md)
-- [ ] Video → Three.js modeling for 3D videos (coming soon)
-- [ ] Coda-DaVinci release (coming soon)
-
 ## 🗂️ Resources
 
 | Work                         | Paper                                    | Project Page                                               | Dataset                                                                        | Code                                    |
