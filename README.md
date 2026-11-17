@@ -1,4 +1,4 @@
-# 
+# Coda：Code-Driven Video Generation Artist
 
 <p align="center">
   <img src="assets/banner.png" width="100%">
@@ -9,11 +9,15 @@ CODA is a series of works that bridges videos and code for visual generation. Th
 - **Video → Code:** model 2D videos as HTML animations and 3D videos as Three.js scenes, so that a video is captured by executable code.
 - **Code → Video:** use executable code to guide video generation, with HTML for 2D animation and Blender / Three.js 3D proxies for scene layout, motion, and physical interactions.
 
-Works in the series:
+## 🧭 Works in the Series
 
-- **Coming soon**: [Coda-DaVinci: Reimagining Video Generation with Code2Video](#coda-davinci)
-- **Coming soon**: Video → Three.js: modeling 3D videos as executable Three.js scenes
-- **2026/10**: [CodeCap-Bench: Can Code Serve as a Good Video Caption?](https://arxiv.org/abs/2610.37341) (Arxiv 2026)
+Click a work's name to jump to its section below.
+
+| Work | Overview | Status |
+|---|---|---|
+| [**Coda-DaVinci**](#coda-davinci) | **Code → Video.** A task-adaptive framework that combines 3D proxies, physics simulation, and video generation to control scene structure and motion. | Coming soon |
+| [**CodeCap-Bench**](#codecap-bench) | **Video → Code.** A benchmark for generating executable HTML/CSS/JavaScript captions of 2D videos, evaluating visual fidelity, spatio-temporal alignment, and information retention. | Released · 2026/10 |
+| [**Video → Three.js**](#video-to-threejs) | **Video → Code.** An upcoming work on modeling 3D videos as executable Three.js scenes. | Coming soon |
 
 ## 📜 News
 
@@ -96,6 +100,8 @@ Bold marks the better value in each row; NMR denotes normalized memory ratio. T2
 **Performance and ablation studies.** The figure summarizes normalized benchmark results, the effects of workflow components, the quality–cost trade-off between rendering engines, and long-video performance on LongAV-Compass and WBench.
 
 Long-video evaluations on **29 LongAV-Compass cases** and **50 WBench cases** show gains in event fulfillment, long-form structure, interaction adherence, and consistency. Transition stability and adherence to scene settings remain limitations relative to direct generation.
+
+<a id="codecap-bench"></a>
 
 ## 🎬 CodeCap-Bench
 
@@ -204,6 +210,14 @@ bash scripts/evaluate.sh --video-id 246 --generated /path/to/generated.mp4 --out
 ```
 
 </details>
+
+<a id="video-to-threejs"></a>
+
+## 🧊 Video → Three.js
+
+**Coming soon**
+
+This upcoming work extends the **Video → Code** direction to 3D videos by modeling them as executable Three.js scenes. Further details will be added upon release.
 
 ## ✒️ Citation
 
