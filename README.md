@@ -16,7 +16,7 @@ Click a work's name to jump to its section below.
 
 | Work | Overview | Status |
 |---|---|---|
-| [**Coda-DaVinci**](#coda-davinci) | **Proxy-guided video generation.** A task-adaptive framework that combines 3D proxies, physics simulation, and video generation to control scene structure and motion. | Coming soon |
+| [**Coda-DaVinci**](#coda-davinci) | **Proxy-guided video generation.** A task-adaptive agentic framework that combines 3D proxies, physics simulation, and video generation to control scene structure and motion. | Coming soon |
 | [**CodeCap-Bench**](#codecap-bench) | **Code captioning and evaluation.** A benchmark for generating executable HTML/CSS/JavaScript captions of 2D videos, evaluating visual fidelity, spatio-temporal alignment, and information retention. | Released · 2026/10 |
 | [**Video → 3D Code**](#video-to-3d-code) | **Video-to-code modeling.** An upcoming direction on representing video content as executable 3D scenes, using tools such as Three.js and Blender. | Coming soon |
 
