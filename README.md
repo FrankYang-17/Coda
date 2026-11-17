@@ -22,10 +22,11 @@ Click a work's name to jump to its section below.
 
 ## 📜 News
 
-[2026/11] 🔥 **Coda-DaVinci: Reimagining Video Generation with Code2Video** is coming soon! See the [overview](#coda-davinci) below.
+[2026/11] 🔥 **Coda-DaVinci: Reimagining Video Generation with Code2Video** is coming soon!.
 
 [2026/11] 🔥 The [dataset](https://huggingface.co/datasets/kevintank/CodeCap-Dataset) and [inference and evaluation code](CodeCap-Bench/README.md) of **CodeCap-Bench** are released !
-[2026/10] 🔥 The [paper](https://arxiv.org/abs/2610.37341) and [project page](https://codecap-bench.github.io/) of **CodeCap-Bench** are released !
+
+[2026/10] 🔥 **CodeCap-Bench** ([paper](https://arxiv.org/abs/2610.37341) and [project page](https://codecap-bench.github.io/)) is released !
 
 ## 🗂️ Resources
 
