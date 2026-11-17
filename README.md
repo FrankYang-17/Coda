@@ -7,15 +7,17 @@
 CODA is a series of works that bridges videos and code for visual generation. The series covers two directions:
 
 - **Video → Code:** model 2D videos as HTML animations and 3D videos as Three.js scenes, so that a video is captured by executable code.
-- **Code → Video:** use code as the caption for video generation, with HTML for 2D animation and Three.js untextured (white-model) scenes for 3D layout and motion.
+- **Code → Video:** use executable code to guide video generation, with HTML for 2D animation and Blender / Three.js 3D proxies for scene layout, motion, and physical interactions.
 
 Works in the series:
 
-- **Coming soon**: Code-Driven Video Generation: HTML 2D animations and Three.js untextured 3D scenes as captions for video generation
+- **Coming soon**: [Coda-DaVinci: Reimagining Video Generation with Code2Video](#coda-davinci)
 - **Coming soon**: Video → Three.js: modeling 3D videos as executable Three.js scenes
 - **2026/10**: [CodeCap-Bench: Can Code Serve as a Good Video Caption?](https://arxiv.org/abs/2610.37341) (Arxiv 2026)
 
 ## 📜 News
+
+[2026/11] 🔥 **Coda-DaVinci: Reimagining Video Generation with Code2Video** is coming soon! See the [overview](#coda-davinci) below.
 
 [2026/11] 🔥 The [dataset](https://huggingface.co/datasets/kevintank/CodeCap-Dataset) and [inference and evaluation code](CodeCap-Bench/README.md) of **CodeCap-Bench** are released !
 [2026/10] 🔥 The [paper](https://arxiv.org/abs/2610.37341) and [project page](https://codecap-bench.github.io/) of **CodeCap-Bench** are released !
@@ -26,7 +28,7 @@ Works in the series:
 - [X] [Dataset (CodeCap-Bench)](https://huggingface.co/datasets/kevintank/CodeCap-Dataset)
 - [X] [Inference and evaluation guide (CodeCap-Bench)](CodeCap-Bench/README.md)
 - [ ] Video → Three.js modeling for 3D videos (coming soon)
-- [ ] Code-driven video generation with HTML / Three.js captions (coming soon)
+- [ ] Coda-DaVinci release (coming soon)
 
 ## 🗂️ Resources
 
@@ -34,7 +36,7 @@ Works in the series:
 | ---------------------------- | ---------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------ | --------------------------------------- |
 | CodeCap-Bench                | [arXiv](https://arxiv.org/abs/2610.37341) | [codecap-bench.github.io](https://codecap-bench.github.io/) | [🤗 CodeCap-Dataset](https://huggingface.co/datasets/kevintank/CodeCap-Dataset) | [CodeCap-Bench](CodeCap-Bench/README.md) |
 | Video → Three.js            | Coming soon                              | Coming soon                                                | Coming soon                                                                    | Coming soon                             |
-| Code-Driven Video Generation | Coming soon                              | Coming soon                                                | Coming soon                                                                    | Coming soon                             |
+| [Coda-DaVinci](#coda-davinci) | Coming soon | Coming soon | — | Coming soon |
 
 ## 💡 Motivation
 
@@ -48,7 +50,60 @@ The CODA series studies three questions:
 
 - **Code as a Visual Caption:** Can code serve as a good caption of 2D and 3D videos?
 - **Video ↔ Code Modeling:** Can models faithfully translate videos into HTML or Three.js code, and render code back into videos?
-- **Code-Driven Video Generation:** Can code captions, from HTML 2D animations to Three.js untextured 3D scenes, guide video generation models to produce videos with accurate layout, motion, and timing?
+- **Code-Driven Video Generation:** Can executable representations, from HTML 2D animations to Blender / Three.js 3D proxies, guide video generation models to produce videos with accurate layout, motion, and timing?
+
+<a id="coda-davinci"></a>
+
+## 🎨 Coda-DaVinci
+
+**Coda-DaVinci: Reimagining Video Generation with Code2Video** · **Coming soon**
+
+Coda-DaVinci advances the **Code → Video** direction of the CODA series. It combines executable 3D scenes with video generation models to improve control over scene structure, motion, and physical interactions. Rather than constructing a detailed 3D proxy for every task, it selects between **proxy-guided generation** and **direct video generation** according to the task: explicit modeling provides structural control where needed, while the video model supplies appearance and fine motion.
+
+<p align="center">
+  <img src="assets/coda-davinci-overview.png" width="100%" alt="Coda-DaVinci framework: task routing, adaptive 3D proxy construction, proxy-grounded video synthesis, and independent review and repair in a shared workspace.">
+</p>
+
+### ✨ Highlights
+
+- **Task-adaptive 3D modeling:** Use medium-grained proxies for environments and structured objects, coarse proxies for human subjects, and Blender physics simulation for interactions that can be meaningfully simulated. Choose direct generation when explicit control is unnecessary and proxy animation risks unnatural motion.
+- **Proxy-grounded video synthesis:** Inspect the rendered proxy, bind appearance references to the corresponding scene entities, and write synthesis prompts that follow the proxy's structure and motion while specifying finer visual details and human actions.
+- **Persistent scenes and visual feedback:** A multi-agent harness preserves scene code and assets across revisions and successive requests. Corresponding-frame inspection and independent task review identify errors and guide repairs to scene code, prompts, or references.
+- **Evidence-based workflow design:** Controlled experiments with blinded human evaluation study proxy granularity, physics simulation, and prompting, revealing task-dependent trade-offs between consistency and motion naturalness.
+
+### 🎞️ Qualitative Examples
+
+<p align="center">
+  <img src="assets/coda-davinci-qualitative.png" width="100%" alt="Comparison of Seedance, Codex + Blender, and Coda-DaVinci on clearing leaves across camera revisits and slicing and unwrapping a rice cake.">
+</p>
+
+**Scene consistency and selective 3D modeling.** Top: clearing fallen leaves while the camera moves away and returns tests whether the changed scene state persists. Bottom: Coda-DaVinci models the objects involved in slicing and unwrapping a rice cake, leaving detailed hand articulation to the video generator. Proxy frames and generated frames show how explicit scene control translates into the final video.
+
+### 🚀 Main Results
+
+The paper compares Coda-DaVinci with direct generation, agentic video generation, and Code2Video baselines. All methods in the main comparison use **Seedance 2.5** for video synthesis. Selected results against direct generation are shown below; ↑ / ↓ indicate whether higher / lower is better.
+
+| Benchmark | Metric | Direct generation | Coda-DaVinci |
+|---|---|---:|---:|
+| VTR | Checklist satisfaction ↑ | 85.15 | **91.42** |
+| VTR | Word error rate (%) ↓ | 59.21 | **11.08** |
+| R2M | Scene identity (NMR) ↑ | 0.347 | **1.011** |
+| R2M | Local geometry (NMR) ↑ | 0.351 | **0.947** |
+| R2M | State (NMR) ↑ | 0.159 | **0.875** |
+| R2M | Object (NMR) ↑ | 0.343 | **0.966** |
+| World Models' Last Exam in Physics | Physics score ↑ | 47.16 | **60.77** |
+| T2AV-Compass | Video realism ↑ | **71.38** | 70.26 |
+| T2AV-Compass | Visual instruction following ↑ | 65.11 | **67.99** |
+
+Bold marks the better value in each row; NMR denotes normalized memory ratio. T2AV-Compass results use 200 randomly sampled tasks. Coda-DaVinci leads the compared methods on all reported **VTR and R2M metrics**, improves physical plausibility over direct generation, and achieves the highest realism among the compared Code2Video methods, approaching direct generation. Physics performance remains below Claude + Blender (65.52).
+
+<p align="center">
+  <img src="assets/coda-davinci-results.png" width="100%" alt="Coda-DaVinci benchmark comparison, workflow ablations, rendering-engine quality and token cost, and long-video evaluations on LongAV-Compass and WBench.">
+</p>
+
+**Performance and ablation studies.** The figure summarizes normalized benchmark results, the effects of workflow components, the quality–cost trade-off between rendering engines, and long-video performance on LongAV-Compass and WBench.
+
+Long-video evaluations on **29 LongAV-Compass cases** and **50 WBench cases** show gains in event fulfillment, long-form structure, interaction adherence, and consistency. Transition stability and adherence to scene settings remain limitations relative to direct generation.
 
 ## 🎬 CodeCap-Bench
 
