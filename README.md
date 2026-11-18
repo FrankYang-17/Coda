@@ -6,9 +6,9 @@
 
 **Coda** is a research series exploring the **full Code2Video pipeline** from **Kling Team**: translating visual content and generation intent into executable representations, constructing and rendering proxy videos, enhancing prompts, synthesizing videos, and developing evaluation and feedback mechanisms to improve generation.
 
-The series spans diverse video types, tasks, and executable representations. **HTML, Three.js, and Blender** are examples of tools used across individual works, with representations and rendering engines chosen to suit each task. CodeCap-Bench's HTML-based captioning of structured 2D videos is one specific task within this broader agenda.
+The series spans diverse video types, tasks, and executable representations. **Blender, Three.js, HTML** are examples of tools used across individual works, with representations and rendering engines chosen to suit each task.
 
-Our research connects **video-to-code modeling**, **proxy construction and simulation**, and **code-guided video synthesis**. Planned directions also include **Prompt Enhancement (PE)** and **reward models for proxy videos**, extending the series across the stages that determine the quality and controllability of Code2Video generation.
+Our research connects **Video-to-Code Modeling**, **Code2Video-Based Captioning**, **Proxy Construction and Simulation**, and **Code-guided Video Generation**, **Prompt Enhancement (PE)** and **Reward Models for Proxy**, extending the series across the stages that determine the quality and controllability of Code2Video generation.
 
 ## 🧭 Works in the Series
 
