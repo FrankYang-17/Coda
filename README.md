@@ -239,8 +239,10 @@ If **Coda series** is helpful for your research, please consider **star** ⭐ an
 
 ## 📄 License
 
-Coda is an open-source academic research series. Unless otherwise noted, the original source code and accompanying documentation in this repository are licensed under the **[Apache License 2.0](LICENSE)**. Academic and commercial use, modification, and redistribution are permitted subject to the license terms.
+Coda is an academic research series with source code available **solely for non-commercial academic research, teaching, and scholarly study**. Unless otherwise noted, the original source code and accompanying documentation in this repository are provided under the custom **[Coda Non-Commercial Academic License](LICENSE)**.
 
-Datasets, model weights, third-party dependencies, and reference media are subject to their respective licenses and release terms. Please consult the relevant project documentation or release page for asset-specific licensing information.
+**Commercial use is prohibited under this license**, including use in commercial products or services, business operations, and model training or evaluation for commercial deployment. Modification and redistribution are permitted only for the academic purposes above and under the same license terms. Other uses require separate written authorization from the relevant copyright holders.
+
+Datasets, model weights, third-party dependencies, and reference media remain subject to their respective licenses and release terms. Please consult the relevant project documentation or release page for asset-specific licensing information.
 
 If you use Coda in your research, we encourage you to cite the relevant papers listed in this README. This citation request is an academic courtesy, not an additional license condition.
