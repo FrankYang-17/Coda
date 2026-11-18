@@ -244,5 +244,3 @@ Coda is an academic research series with source code available **solely for non-
 **Commercial use is prohibited under this license**, including use in commercial products or services, business operations, and model training or evaluation for commercial deployment. Modification and redistribution are permitted only for the academic purposes above and under the same license terms. Other uses require separate written authorization from the relevant copyright holders.
 
 Datasets, model weights, third-party dependencies, and reference media remain subject to their respective licenses and release terms. Please consult the relevant project documentation or release page for asset-specific licensing information.
-
-If you use Coda in your research, we encourage you to cite the relevant papers listed in this README. This citation request is an academic courtesy, not an additional license condition.
