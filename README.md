@@ -1,4 +1,4 @@
-<h1 align="center">Coda：Code-Driven Video Generation Artist</h1>
+<h1 align="center">Coda: Code-Driven Video Generation Artist</h1>
 
 <p align="center">
   <img src="assets/banner.png" width="100%">
@@ -14,25 +14,17 @@ Our research connects **Video-to-Code Modeling**, **Code2Video-Based Captioning*
 
 **Click** the work's name to jump to its section below.
 
-| Work                                           | Overview                                                                                                                                                                                                     | Status              |
-| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- |
-| [**Coda-DaVinci**](#coda-davinci)         | **Proxy-guided video generation.** A task-adaptive agentic framework that combines 3D proxies, physics simulation, and video generation to control scene structure and motion.                         | Released · 2026/11 |
-| [**CodeCap-Bench**](#codecap-bench)       | **Code captioning and evaluation.** A benchmark for generating executable HTML/CSS/JavaScript captions of 2D videos, evaluating visual fidelity, spatio-temporal alignment, and information retention. | Released · 2026/10 |
-| [**Video → 3D Code**](#video-to-3d-code) | **Video-to-code modeling.** An upcoming direction on representing video content as executable 3D scenes, using tools such as Three.js and Blender.                                                     | Coming soon         |
+| Work                                           | Overview                                                                                                                                                                                                     | Status              | Paper                                      | Project Page                                               | Asset                                                                          |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | ------------------------------------------ | ---------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| [**Coda-DaVinci**](#coda-davinci)         | **Proxy-guided video generation.** A task-adaptive agentic framework that combines 3D proxies, physics simulation, and video generation to control scene structure and motion.                         | Released · 2026/11 | [arXiv](https://arxiv.org/abs/2611.26595v1) | [coda-davinci.github.io](https://coda-davinci.github.io/)   | —                                                                             |
+| [**CodeCap-Bench**](#codecap-bench)       | **Code captioning and evaluation.** A benchmark for generating executable HTML/CSS/JavaScript captions of 2D videos, evaluating visual fidelity, spatio-temporal alignment, and information retention. | Released · 2026/10 | [arXiv](https://arxiv.org/abs/2610.37341)   | [codecap-bench.github.io](https://codecap-bench.github.io/) | [🤗 CodeCap-Dataset](https://huggingface.co/datasets/kevintank/CodeCap-Dataset) |
+| [**Video → 3D Code**](#video-to-3d-code) | **Video-to-code modeling.** An upcoming direction on representing video content as executable 3D scenes, using tools such as Three.js and Blender.                                                     | Coming soon         | Coming soon                                | Coming soon                                                | Coming soon                                                                    |
 
 ## 📜 News
 
 [2026/11] 🔥 **Coda-DaVinci**, a task-adaptive agentic framework for Code2Video generation, is released !
 
 [2026/10] 🔥 **CodeCap-Bench**, a benchmark for evaluating video-to-code captioning through executable video reconstruction, is released !
-
-## 🗂️ Resources
-
-| Work                                 | Paper                                      | Project Page                                               | Asset                                                                          |
-| ------------------------------------ | ------------------------------------------ | ---------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| CodeCap-Bench                        | [arXiv](https://arxiv.org/abs/2610.37341)   | [codecap-bench.github.io](https://codecap-bench.github.io/) | [🤗 CodeCap-Dataset](https://huggingface.co/datasets/kevintank/CodeCap-Dataset) |
-| [Video → 3D Code](#video-to-3d-code) | Coming soon                                | Coming soon                                                | Coming soon                                                                    |
-| [Coda-DaVinci](#coda-davinci)         | [arXiv](https://arxiv.org/abs/2611.26595v1) | [coda-davinci.github.io](https://coda-davinci.github.io/)   | —                                                                             |
 
 ## 💡 Motivation
 
