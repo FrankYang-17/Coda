@@ -14,11 +14,11 @@ Our research connects **Video-to-Code Modeling**, **Code2Video-Based Captioning*
 
 **Click** the work's name to jump to its section below.
 
-| Work | Overview | Status | Asset |
-| --- | --- | --- | --- |
-| [**Coda-DaVinci**](#coda-davinci) | **Proxy-guided video generation.** A task-adaptive agentic framework that combines 3D proxies, physics simulation, and video generation to control scene structure and motion. | Released · 2026/11 | [📄 arXiv](https://arxiv.org/abs/2611.26595v1)<br />[🏠 Homepage](https://coda-davinci.github.io/) |
-| [**CodeCap-Bench**](#codecap-bench) | **Code captioning and evaluation.** A benchmark for generating executable HTML/CSS/JavaScript captions of 2D videos, evaluating visual fidelity, spatio-temporal alignment, and information retention. | Released · 2026/10 | [📄 arXiv](https://arxiv.org/abs/2610.37341)<br />[🏠 Homepage](https://codecap-bench.github.io/)<br />🤗 CodeCap-Dataset |
-| [**Video → 3D Code**](#video-to-3d-code) | **Video-to-code modeling.** An upcoming direction on representing video content as executable 3D scenes, using tools such as Three.js and Blender. | Coming soon | Coming soon |
+| Work                                           | Overview                                                                                                                                                                                                     | Status              | Asset                                                                                                                   |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| [**Coda-DaVinci**](#coda-davinci)         | **Proxy-guided video generation.** A task-adaptive agentic framework that combines 3D proxies, physics simulation, and video generation to control scene structure and motion.                         | Released · 2026/11 | [📄 arXiv](https://arxiv.org/abs/2611.26595v1)<br />[🏠 Homepage](https://coda-davinci.github.io/)                        |
+| [**CodeCap-Bench**](#codecap-bench)       | **Code captioning and evaluation.** A benchmark for generating executable HTML/CSS/JavaScript captions of 2D videos, evaluating visual fidelity, spatio-temporal alignment, and information retention. | Released · 2026/10 | [📄 arXiv](https://arxiv.org/abs/2610.37341)<br />[🏠 Homepage](https://codecap-bench.github.io/)<br />🤗 CodeCap-Dataset |
+| [**Video → 3D Code**](#video-to-3d-code) | **Video-to-code modeling.** An upcoming direction on representing video content as executable 3D scenes, using tools such as Three.js and Blender.                                                     | Coming soon         | Coming soon                                                                                                             |
 
 ## 📜 News
 
@@ -229,11 +229,11 @@ If **Coda series** is helpful for your research, please consider **star** ⭐ an
       url={https://arxiv.org/abs/2611.26595}, 
 }
 
-@article{Tang2026CodeCapBench,
-  title        = {CodeCap-Bench: Can Code Serve as a Good Video Caption?},
-  author       = {Tang, Jiafu and Xu, Yifan and Tang, Eric and Zhao, Junjie and Luo, Shipeng and Sun, Te and Hu, Haoxuan and Ji, Yiyan and Chen, Xinlong and Wang, Zihao and Shi, Yang and Zhang, Yuanxing and Wan, Pengfei and Liu, Jiaheng},
-  journal      = {arXiv preprint arXiv:2610.37341},
-  year         = {2026}
+@article{tang2026codecap,
+  title={CodeCap-Bench: Can Code Serve as a Good Video Caption?},
+  author={Tang, Jiafu and Xu, Yifan and Tang, Eric and Zhao, Junjie and Luo, Shipeng and Sun, Te and Hu, Haoxuan and Ji, Yiyan and Chen, Xinlong and Wang, Zihao and others},
+  journal={arXiv preprint arXiv:2610.37341},
+  year={2026}
 }
 ```
 
