@@ -28,11 +28,11 @@ Our research connects **Video-to-Code Modeling**, **Code2Video-Based Captioning*
 
 ## 🗂️ Resources
 
-| Work                                 | Paper                                    | Project Page                                               | Dataset                                                                        | Code                                    |
-| ------------------------------------ | ---------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------ | --------------------------------------- |
-| CodeCap-Bench                        | [arXiv](https://arxiv.org/abs/2610.37341) | [codecap-bench.github.io](https://codecap-bench.github.io/) | [🤗 CodeCap-Dataset](https://huggingface.co/datasets/kevintank/CodeCap-Dataset) | [CodeCap-Bench](CodeCap-Bench/README.md) |
-| [Video → 3D Code](#video-to-3d-code) | Coming soon                              | Coming soon                                                | Coming soon                                                                    | Coming soon                             |
-| [Coda-DaVinci](#coda-davinci)         | Coming soon                              | Coming soon                                                | —                                                                             | Coming soon                             |
+| Work                                 | Paper                                      | Project Page                                               | Asset                                                                          |
+| ------------------------------------ | ------------------------------------------ | ---------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| CodeCap-Bench                        | [arXiv](https://arxiv.org/abs/2610.37341)   | [codecap-bench.github.io](https://codecap-bench.github.io/) | [🤗 CodeCap-Dataset](https://huggingface.co/datasets/kevintank/CodeCap-Dataset) |
+| [Video → 3D Code](#video-to-3d-code) | Coming soon                                | Coming soon                                                | Coming soon                                                                    |
+| [Coda-DaVinci](#coda-davinci)         | [arXiv](https://arxiv.org/abs/2611.26595v1) | [coda-davinci.github.io](https://coda-davinci.github.io/)   | —                                                                             |
 
 ## 💡 Motivation
 
