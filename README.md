@@ -14,11 +14,11 @@ Our research connects **Video-to-Code Modeling**, **Code2Video-Based Captioning*
 
 Click a work's name to jump to its section below.
 
-| Work | Overview | Status |
-|---|---|---|
-| [**Coda-DaVinci**](#coda-davinci) | **Proxy-guided video generation.** A task-adaptive agentic framework that combines 3D proxies, physics simulation, and video generation to control scene structure and motion. | Coming soon |
-| [**CodeCap-Bench**](#codecap-bench) | **Code captioning and evaluation.** A benchmark for generating executable HTML/CSS/JavaScript captions of 2D videos, evaluating visual fidelity, spatio-temporal alignment, and information retention. | Released · 2026/10 |
-| [**Video → 3D Code**](#video-to-3d-code) | **Video-to-code modeling.** An upcoming direction on representing video content as executable 3D scenes, using tools such as Three.js and Blender. | Coming soon |
+| Work                                           | Overview                                                                                                                                                                                                     | Status              |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- |
+| [**Coda-DaVinci**](#coda-davinci)         | **Proxy-guided video generation.** A task-adaptive agentic framework that combines 3D proxies, physics simulation, and video generation to control scene structure and motion.                         | Coming soon         |
+| [**CodeCap-Bench**](#codecap-bench)       | **Code captioning and evaluation.** A benchmark for generating executable HTML/CSS/JavaScript captions of 2D videos, evaluating visual fidelity, spatio-temporal alignment, and information retention. | Released · 2026/10 |
+| [**Video → 3D Code**](#video-to-3d-code) | **Video-to-code modeling.** An upcoming direction on representing video content as executable 3D scenes, using tools such as Three.js and Blender.                                                     | Coming soon         |
 
 ## 📜 News
 
@@ -30,11 +30,11 @@ Click a work's name to jump to its section below.
 
 ## 🗂️ Resources
 
-| Work                         | Paper                                    | Project Page                                               | Dataset                                                                        | Code                                    |
-| ---------------------------- | ---------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------ | --------------------------------------- |
-| CodeCap-Bench                | [arXiv](https://arxiv.org/abs/2610.37341) | [codecap-bench.github.io](https://codecap-bench.github.io/) | [🤗 CodeCap-Dataset](https://huggingface.co/datasets/kevintank/CodeCap-Dataset) | [CodeCap-Bench](CodeCap-Bench/README.md) |
+| Work                                 | Paper                                    | Project Page                                               | Dataset                                                                        | Code                                    |
+| ------------------------------------ | ---------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------ | --------------------------------------- |
+| CodeCap-Bench                        | [arXiv](https://arxiv.org/abs/2610.37341) | [codecap-bench.github.io](https://codecap-bench.github.io/) | [🤗 CodeCap-Dataset](https://huggingface.co/datasets/kevintank/CodeCap-Dataset) | [CodeCap-Bench](CodeCap-Bench/README.md) |
 | [Video → 3D Code](#video-to-3d-code) | Coming soon                              | Coming soon                                                | Coming soon                                                                    | Coming soon                             |
-| [Coda-DaVinci](#coda-davinci) | Coming soon | Coming soon | — | Coming soon |
+| [Coda-DaVinci](#coda-davinci)         | Coming soon                              | Coming soon                                                | —                                                                             | Coming soon                             |
 
 ## 💡 Motivation
 
@@ -83,17 +83,17 @@ Coda-DaVinci studies **task-adaptive proxy construction and video synthesis** wi
 
 The paper compares Coda-DaVinci with direct generation, agentic video generation, and Code2Video baselines. All methods in the main comparison use **Seedance 2.5** for video synthesis. Selected results against direct generation are shown below; ↑ / ↓ indicate whether higher / lower is better.
 
-| Benchmark | Metric | Direct generation | Coda-DaVinci |
-|---|---|---:|---:|
-| VTR | Checklist satisfaction ↑ | 85.15 | **91.42** |
-| VTR | Word error rate (%) ↓ | 59.21 | **11.08** |
-| R2M | Scene identity (NMR) ↑ | 0.347 | **1.011** |
-| R2M | Local geometry (NMR) ↑ | 0.351 | **0.947** |
-| R2M | State (NMR) ↑ | 0.159 | **0.875** |
-| R2M | Object (NMR) ↑ | 0.343 | **0.966** |
-| World Models' Last Exam in Physics | Physics score ↑ | 47.16 | **60.77** |
-| T2AV-Compass | Video realism ↑ | **71.38** | 70.26 |
-| T2AV-Compass | Visual instruction following ↑ | 65.11 | **67.99** |
+| Benchmark                          | Metric                          | Direct generation |    Coda-DaVinci |
+| ---------------------------------- | ------------------------------- | ----------------: | --------------: |
+| VTR                                | Checklist satisfaction ↑       |             85.15 | **91.42** |
+| VTR                                | Word error rate (%) ↓          |             59.21 | **11.08** |
+| R2M                                | Scene identity (NMR) ↑         |             0.347 | **1.011** |
+| R2M                                | Local geometry (NMR) ↑         |             0.351 | **0.947** |
+| R2M                                | State (NMR) ↑                  |             0.159 | **0.875** |
+| R2M                                | Object (NMR) ↑                 |             0.343 | **0.966** |
+| World Models' Last Exam in Physics | Physics score ↑                |             47.16 | **60.77** |
+| T2AV-Compass                       | Video realism ↑                |   **71.38** |           70.26 |
+| T2AV-Compass                       | Visual instruction following ↑ |             65.11 | **67.99** |
 
 Bold marks the better value in each row; NMR denotes normalized memory ratio. T2AV-Compass results use 200 randomly sampled tasks. Coda-DaVinci leads the compared methods on all reported **VTR and R2M metrics**, improves physical plausibility over direct generation, and achieves the highest realism among the compared Code2Video methods, approaching direct generation. Physics performance remains below Claude + Blender (65.52).
 
@@ -229,6 +229,16 @@ This upcoming direction studies how video content can be represented as executab
 If **Coda series** is helpful for your research, please consider **star** ⭐ and **citation** 📝 :
 
 ```bibtex
+@misc{ji2026codadavincireimaginingvideogeneration,
+      title={Coda-DaVinci: Reimagining Video Generation with Code2Video}, 
+      author={Yiyan Ji and Qixun Wang and Yang Shi and Zhuoran Zhang and Yifan Xu and Tengfei Liu and Yuqi Tang and Xiaohan Zhang and Shujie Li and Jiafu Tang and Xuanyu Zhu and Xinyu Liu and Yan He and Yushuo Guan and Zihao Wang and Xianghua Ying and Shixuan Liu and Haotian Wang and Wenjing Yang and Zhaoxiang Zhang and Yuanxing Zhang and Pengfei Wan and Jiaheng Liu},
+      year={2026},
+      eprint={2611.26595},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2611.26595}, 
+}
+
 @article{Tang2026CodeCapBench,
   title        = {CodeCap-Bench: Can Code Serve as a Good Video Caption?},
   author       = {Tang, Jiafu and Xu, Yifan and Tang, Eric and Zhao, Junjie and Luo, Shipeng and Sun, Te and Hu, Haoxuan and Ji, Yiyan and Chen, Xinlong and Wang, Zihao and Shi, Yang and Zhang, Yuanxing and Wan, Pengfei and Liu, Jiaheng},
