@@ -8,7 +8,7 @@
 
 The series spans diverse video types, tasks, and executable representations. **Blender, Three.js, HTML** are examples of tools used across individual works, with representations and rendering engines chosen to suit each task.
 
-Our research connects **Video-to-Code Modeling**, **Code2Video-Based Captioning**, **Proxy Construction and Simulation**, and **Code-guided Video Generation**, **Prompt Enhancement (PE)** and **Reward Models for Proxy**, extending the series across the stages that determine the quality and controllability of Code2Video generation.
+Our research connects **Video-to-Code Modeling**, **Code2Video-Based Captioning**, **Proxy Construction and Simulation**, and **Code-guided Video Generation**, **Prompt Enhancement** and **Reward Models for Proxy**, extending the series across the stages that determine the quality and controllability of Code2Video generation.
 
 ## 🧭 Works in the Series
 
@@ -16,15 +16,15 @@ Our research connects **Video-to-Code Modeling**, **Code2Video-Based Captioning*
 
 | Work                                           | Overview                                                                                                                                                                                                     | Status              | Resources                                                                                                                                                                                  |
 | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [**Coda-DaVinci**](#coda-davinci)         | **Proxy-guided video generation.** A task-adaptive agentic framework that combines 3D proxies, physics simulation, and video generation to control scene structure and motion.                         | Released · 2026/11 | [📄&nbsp;arXiv](https://arxiv.org/abs/2611.26595v1)<br />[🏠&nbsp;Homepage](https://coda-davinci.github.io/)                                                                                 |
-| [**CodeCap-Bench**](#codecap-bench)       | **Code captioning and evaluation.** A benchmark for generating executable HTML/CSS/JavaScript captions of 2D videos, evaluating visual fidelity, spatio-temporal alignment, and information retention. | Released · 2026/10 | [📄&nbsp;arXiv](https://arxiv.org/abs/2610.37341)<br />[🏠&nbsp;Homepage](https://codecap-bench.github.io/)<br />[🤗&nbsp;Dataset](https://huggingface.co/datasets/kevintank/CodeCap-Dataset) |
+| [**Coda-DaVinci**](#coda-davinci)         | **Proxy-guided video generation.** A task-adaptive agentic framework that combines 3D proxies, physics simulation, and video generation to control scene structure and motion.                         | Released · 2026/11 | [📄&nbsp;paper](https://arxiv.org/abs/2611.26595v1)<br />[🏠&nbsp;Homepage](https://coda-davinci.github.io/)                                                                                 |
+| [**CodeCap-Bench**](#codecap-bench)       | **Code captioning and evaluation.** A benchmark for generating executable HTML/CSS/JavaScript captions of 2D videos, evaluating visual fidelity, spatio-temporal alignment, and information retention. | Released · 2026/10 | [📄&nbsp;paper](https://arxiv.org/abs/2610.37341)<br />[🏠&nbsp;Homepage](https://codecap-bench.github.io/)<br />[🤗&nbsp;Dataset](https://huggingface.co/datasets/kevintank/CodeCap-Dataset) |
 | [**Video → 3D Code**](#video-to-3d-code) | **Video-to-code modeling.** An upcoming direction on representing video content as executable 3D scenes, using tools such as Three.js and Blender.                                                     | Coming soon         | Coming soon                                                                                                                                                                                |
 
 ## 📜 News
 
-[2026/11] 🔥 **Coda-DaVinci**, a task-adaptive agentic framework for Code2Video generation, is released !
+**[2026/11]** 🔥 **Coda-DaVinci**, a task-adaptive agentic framework for Code2Video generation, is released !
 
-[2026/10] 🔥 **CodeCap-Bench**, a benchmark for evaluating video-to-code captioning through executable video reconstruction, is released !
+**[2026/10]** 🔥 **CodeCap-Bench**, a benchmark for evaluating video-to-code captioning through executable video reconstruction, is released !
 
 ## 💡 Motivation
 
