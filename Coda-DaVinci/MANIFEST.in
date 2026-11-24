@@ -1,0 +1,4 @@
+include README.md LICENSE NOTICE .env.example
+recursive-include docs *.md *.png *.webp
+recursive-include examples *.txt *.json
+recursive-include src/coda_davinci/resources *

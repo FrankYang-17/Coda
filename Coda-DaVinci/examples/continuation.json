@@ -1,0 +1,6 @@
+{
+  "turns": [
+    {"turn": 1, "duration_seconds": 8, "prompt": "Show a small studio with a red chair beside a wooden desk. Move around the desk and stop facing the window."},
+    {"turn": 2, "duration_seconds": 8, "prompt": "Turn back toward the desk. The same red chair is still beside it. Move closer to the desk and stop."}
+  ]
+}

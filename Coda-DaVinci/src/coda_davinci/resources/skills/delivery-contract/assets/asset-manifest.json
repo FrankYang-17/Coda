@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "kind": "asset",
+  "summary": "A reusable bar counter in local coordinates.",
+  "files": ["build.py", "asset.blend", "preview.png"],
+  "previews": ["preview.png"],
+  "entrypoint": "build.py",
+  "blend_file": "asset.blend",
+  "asset": {
+    "id": "bar_counter",
+    "collection": "bar_counter",
+    "units": "meters",
+    "up_axis": "Z",
+    "forward_axis": "+Y",
+    "origin": "Floor-level center of the counter footprint",
+    "bounds": [[-1.5, -0.4, 0.0], [1.5, 0.4, 1.1]],
+    "anchors": {"service_center": [0.0, 0.4, 1.1]}
+  },
+  "remaining_issues": []
+}

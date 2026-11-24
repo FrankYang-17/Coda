@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "kind": "camera",
+  "summary": "Camera setup for the supplied restaurant scene.",
+  "files": ["camera.py", "shots.json", "preview.png"],
+  "previews": ["preview.png"],
+  "entrypoint": "camera.py",
+  "validation_scene": "inputs/scene.blend",
+  "remaining_issues": []
+}

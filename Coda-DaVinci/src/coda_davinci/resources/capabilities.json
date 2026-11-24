@@ -1,0 +1,11 @@
+{
+  "level": "medium",
+  "human_representation": "cylinder_body_sphere_head",
+  "limbs": false,
+  "articulated_motion": false,
+  "contact_representation": "coarse_endpoint",
+  "object_representation": "coarse_silhouette",
+  "task_required_material_deformation": "simulation_geometry_when_required",
+  "human_level": "coarse",
+  "human_contact_representation": "logical_anchor"
+}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>白模与成片对照</title>
+<style>
+body{background:#111827;color:#e5e7eb;font:16px/1.6 system-ui;margin:24px auto;padding:0 16px;max-width:920px}
+video{display:block;max-width:100%;max-height:76vh;margin:auto;background:#000}
+button,select{font:inherit;padding:6px 12px;margin:4px;background:#243247;color:inherit;border:1px solid #64748b;border-radius:6px}
+input{width:100%}.muted{color:#aab7ca}a{color:#93c5fd}
+</style>
+<h1>白模与成片对照</h1>
+<p>上：白模　下：生成成片 · __DURATIONS__</p>
+<p class="muted">共用实际秒数时间轴。较短视频结束后显示黑屏和 ENDED。预览为 24 FPS；智能体抽帧检查使用原视频。</p>
+<video id="video" src="comparison.mp4" controls preload="metadata" playsinline></video>
+<input id="timeline" type="range" min="0" max="1" step="0.01" value="0" aria-label="共同时间轴">
+<div><button id="play">播放／暂停</button><button id="back">后退 0.5 秒</button><button id="next">前进 0.5 秒</button>
+<select id="speed" aria-label="播放速度"><option value="0.25">0.25 倍</option><option value="0.5">0.5 倍</option><option value="1" selected>1 倍</option></select>
+<span id="time">0.00 s</span> · <a href="comparison.mp4">打开对照视频</a></div>
+<p>检查运镜方向与节奏、主体位置、遮挡恢复、动作发生时间及切镜；按原始任务区分需要保持的结构和允许变化的外观。</p>
+<script>
+const video=document.getElementById('video'), timeline=document.getElementById('timeline');
+video.onloadedmetadata=()=>timeline.max=video.duration;
+video.ontimeupdate=()=>{timeline.value=video.currentTime;document.getElementById('time').textContent=video.currentTime.toFixed(2)+' s';};
+timeline.oninput=()=>{video.pause();video.currentTime=Number(timeline.value);};
+document.getElementById('play').onclick=()=>{if(video.paused)video.play().catch(()=>{document.getElementById('time').textContent='播放失败，请打开视频文件';});else video.pause();};
+document.getElementById('speed').onchange=e=>video.playbackRate=Number(e.target.value);
+function seek(delta){video.pause();video.currentTime=Math.max(0,Math.min(video.duration||0,video.currentTime+delta));}
+document.getElementById('back').onclick=()=>seek(-0.5);
+document.getElementById('next').onclick=()=>seek(0.5);
+</script>
+</html>
