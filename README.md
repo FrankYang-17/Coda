@@ -63,6 +63,14 @@ Coda-DaVinci studies **task-adaptive proxy construction and video synthesis** wi
 
 ### 🎞️ Qualitative Examples
 
+Click a preview to watch the video. Visit the [project showcase](https://coda-davinci.github.io/#showcase) for synchronized comparisons and reference media.
+
+| A runner and a car | Cutting a rice roll | Clearing leaves |
+| :---: | :---: | :---: |
+| [![A runner and a car](Coda-DaVinci/docs/assets/runner.webp)](https://coda-davinci.github.io/assets/long-runner-harness-8s.mp4) | [![Cutting and unwrapping a rice roll](Coda-DaVinci/docs/assets/rice.webp)](https://coda-davinci.github.io/assets/rice-harness.mp4) | [![Clearing leaves from outdoor steps](Coda-DaVinci/docs/assets/leaves.webp)](https://coda-davinci.github.io/assets/leaves-harness.mp4) |
+| Subject continuity across shots. | Natural hand motion guided by a simple proxy. | Scene changes persist when the camera returns. |
+| [▶ Watch video](https://coda-davinci.github.io/assets/long-runner-harness-8s.mp4) | [▶ Watch video](https://coda-davinci.github.io/assets/rice-harness.mp4) · [3D proxy](https://coda-davinci.github.io/assets/rice-harness-proxy.mp4) | [▶ Watch video](https://coda-davinci.github.io/assets/leaves-harness.mp4) · [3D proxy](https://coda-davinci.github.io/assets/leaves-harness-proxy.mp4) |
+
 <p align="center">
   <img src="assets/coda-davinci-qualitative.png" width="100%" alt="Comparison of Seedance, Codex + Blender, and Coda-DaVinci on clearing leaves across camera revisits and slicing and unwrapping a rice cake.">
 </p>
