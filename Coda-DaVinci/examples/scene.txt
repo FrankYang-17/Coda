@@ -1,0 +1,4 @@
+A red wooden ball rolls down a short ramp onto a flat tabletop and knocks over three
+small blue blocks. Show the collision and the blocks settling, then move the camera
+around the table to reveal their final positions. Keep the table, ramp and all three
+blocks visible at the end. Warm daylight, realistic materials, one continuous shot.

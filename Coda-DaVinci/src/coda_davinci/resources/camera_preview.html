@@ -1,0 +1,16 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>相机方案预演</title>
+<style>
+body{font:15px/1.6 system-ui;background:#111827;color:#eee;margin:24px}main{display:flex;gap:16px;overflow-x:auto;align-items:start}
+article{background:#1e293b;border-radius:8px;padding:16px;min-width:320px;flex:1}video,img{width:100%;display:block}pre{white-space:pre-wrap}
+button{font:inherit;padding:8px;margin:8px;border-radius:6px}h2{font-size:18px}
+</style>
+<h1>相机方案预演</h1><p>所有预演从场景的 __START__ 秒开始，画面下方为完整场景时间轴上的采样。</p>
+<button id="play">一起从头播放</button><button id="pause">一起暂停</button><span id="message"></span>
+<main>__CARDS__</main>
+<p>选定方案后，由智能体调用 apply_camera_variant 保存新的场景文件，用于完整视频渲染。</p>
+<script>
+const videos=[...document.querySelectorAll('video')];
+document.getElementById('play').onclick=()=>videos.forEach(v=>{v.currentTime=0;v.play().catch(()=>document.getElementById('message').textContent='部分视频无法播放，请检查对应文件');});
+document.getElementById('pause').onclick=()=>videos.forEach(v=>v.pause());
+</script></html>
